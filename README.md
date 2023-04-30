@@ -1,30 +1,24 @@
 # Reservoir Water Level Data Analysis
-This project aims to analyze the impact of economic output and income inequality on the Reservoir Water Level. The steps taken to complete this project are listed below:
-## Data Selection
-Reservoir Water Level was chosen as the environmental quality measure for analysis. The data was obtained from the National Data Analytics Platform (NDAP).
 
-## Data Transformation
-The original dataset obtained from NDAP was transformed into a district-year level dataset. This included creating a unique district-year ID for each row in the sample.
+The Reservoir Water Level Data Analysis project aims to examine the impact of economic output and income inequality on the Reservoir Water Level. The following steps were taken to complete the enhanced version of this project:
 
-## Data Merging
-The district-year level environmental quality data was merged with the corresponding state-year wise economic output data, i.e., the net state domestic product (SDP) at constant prices. This data was obtained from the Reserve Bank of India accessed on the Database for the Indian Economy (DBIE) portal. Finally, the dataset was merged with the district-level Gini index from the paper by Mohanty et al. (2016).
+## Enhanced Regression Model
+The original regression model was enhanced by incorporating indicators for power inequality, including literacy rate, mortality rate, per capita income, unemployment, and rainfall. These variables were added to the model to better explain the variation in the environmental quality indicator.
 
-## Summary Statistics
-Detailed summary statistics for all variables were prepared including tables, histograms, box-plots, shape of the distribution, and skew. Outliers were also identified.
+## Alternative Data Source
+Instead of using district-level data for the Gini index, state-census-year level data provided by Pandey and Gautam (2020) was utilized to test how this substitution of variables alters the results.
 
-## Regression Analysis
-Using the data, a regression model was estimated for Reservoir Water Level. The model equation was as follows:
-```python
-Reservoir Water Level (i,t) = β0 + β1SDP(i,t) + ui,t
-```
-The results of the regression analysis were summarized in a table and interpreted
+## Standard Errors in Regression Analysis
+The role of standard errors in regression analysis was clearly articulated for the context of this study. Standard errors were utilized to measure the precision of the estimated coefficients and to test hypotheses about population parameters.
 
-## Visualizing Residuals
-The model residuals (i.e., ûi,t) were visualized on a plot having Reservoir Water Level on the Y-axis and SDP on the X-axis. Three plots were constructed, including one having ûi,t on the Y-axis and SDP on the X-axis, and another having predicted values of the Reservoir Water Level on the Y-axis and true values of the Reservoir Water Level on the X-axis. The relationship between these three plots was explained.<br>
-Histogram of Residuals: A histogram of ûi,t was plotted to verify that ∑i,t ûi,t = 0.
+## Structural Break Test
+A Chow Test and a t-test were conducted to statistically test for a structural break in the mean environmental quality across different state-groups. The inference drawn from these tests was compared.
 
-## Multiple Regression Analysis
-Finally, a multiple regression model was estimated to analyze the impact of economic output, income inequality, and their interaction on Reservoir Water Level. The model equation was as follows:
-```python
-Reservoir Water Level (i,t) = α0 + α1SDP(i,t) + α2SDP(i,t)^2 + α3SDP(i,t)^3 + α4GINI(i) + γi,t
-```
+$$ Monte Carlo Simulation
+The enhanced regression model was used to run a Monte Carlo simulation procedure to comment on the consistency of OLS estimates. The intercept and slope coefficient estimates obtained were treated as true population parameters.
+
+## Maximum Likelihood Estimation
+The maximum likelihood strategy was considered as a means to improve the estimation of the enhanced regression model.
+
+## Variance in Environmental Quality Across State Groups
+It was found that the average environmental quality differs significantly across state groups. A test was conducted to examine the variance in environmental quality across the state-groups. If the variance differs significantly across state groups, the assumption of OLS is violated. An alternative estimation strategy was suggested to account for such a variance structure.
