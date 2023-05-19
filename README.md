@@ -14,7 +14,7 @@ The role of standard errors in regression analysis was clearly articulated for t
 ## Structural Break Test
 A Chow Test and a t-test were conducted to statistically test for a structural break in the mean environmental quality across different state-groups. The inference drawn from these tests was compared.
 
-$$ Monte Carlo Simulation
+## Monte Carlo Simulation
 The enhanced regression model was used to run a Monte Carlo simulation procedure to comment on the consistency of OLS estimates. The intercept and slope coefficient estimates obtained were treated as true population parameters.
 
 ## Maximum Likelihood Estimation
